@@ -11,7 +11,7 @@ git branch feature-dimension
 git checkout feature-dimension
 
 #or
-git branch -b feature-dimension
+git checkout -b feature-dimension
 git switch -c feature-dimension #From git version 2.23 and above (switch command is more intuitive and easy to understand)
 
 echo "This is a powerful artifact from another dimension" > dimensional-artifact.txt
@@ -39,3 +39,19 @@ git branch
 
 #View all branches including remote branches
 git branch -a
+
+#Amending Your Last Commit
+git commit --amend -m "Initial commit with corrected updates"
+
+#View git commit logs as short summary
+git log --oneline
+
+#Cherry-picking Commits
+######
+#It's most effective for applying specific, isolated changes or fixes from one branch to another when a full merge is not desired or appropriate
+######
+#Only pick HEAD commit
+git cherry-pick feature-branch
+
+#Pick a specific commit using commit hash
+git cherry-pick <commit_hash>
