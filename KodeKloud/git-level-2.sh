@@ -68,3 +68,21 @@ git log --oneline
 git config --global --add safe.directory /opt/xfusioncorp_beta.git
 sudo git push dev_beta master
 git log --oneline
+
+
+#Day-5: Git Revert Some Changes
+#------------------------------
+sshpass -p "Bl@kW" ssh -o StrictHostKeyChecking=no natasha@ststor01
+a@ststor01 apps]$ history
+cd /usr/src/kodekloudrepos/apps
+ls
+git status
+git log --oneline
+git log --stat
+cat apps.txt
+git log -p
+sudo git revert HEAD
+git log --oneline
+ls
+cat info.txt 
+git log -p --stat
