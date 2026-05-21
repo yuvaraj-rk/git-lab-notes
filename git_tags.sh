@@ -42,6 +42,14 @@ git checkout -b branch-name v1.0
 
 #Note: Any commits you make will be orphaned (not on any branch) when you check out a different branch, unless you explicitly create a new branch to retain them.
 
+##### Checking Out Specific Commit using hash #####
+
+git checkout <hash-commit>
+
+#If file name not specified, the current working directory will checkout and switch to the hash commit
+#Mentioning file name ensures, git only fetches the file into the current working directory without switching the whole current directory to that specific hash commit
+git checkout <hash-commit> -- <file-name>
+
 
 ##### Deleting Tags #####
 #To remove the tag v0.0.1 from the local repository

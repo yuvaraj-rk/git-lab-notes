@@ -7,6 +7,14 @@ git log
 #only display each commit in a single line with short commit hash & commit message
 git log --oneline
 
+#If the logs are printed on new page and the result is lost on exit, use below option (before log) "--no-pager" to list the result directly on terminal to retain the log output
+git --no-pager log
+
+#To permanently change the setting
+git config --global core.pager "less -X"
+
+#Not recommended (will dump all logs on the terminal without paging)
+git config --global pager.log false
 
 ##### Formatting Log Output #####
 #To show the files that were modified in each commit
