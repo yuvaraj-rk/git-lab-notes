@@ -57,9 +57,19 @@ git log --oneline
 ls
 
 
-#Day-3: 
+#Day-3: Git hard reset
 #--------------------------
 sshpass -p "Bl@kW" ssh -o StrictHostKeyChecking=no natasha@ststor01
+cd /usr/src/kodekloudrepos/cluster/
+ls
+git branch
+git log --oneline
+ls
+git remote -v
+git reset --hard HEAD~10
+git log --oneline
+ls
+git push -f
 
 #Day-4: 
 #--------------------------
