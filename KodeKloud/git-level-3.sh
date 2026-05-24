@@ -71,10 +71,20 @@ git log --oneline
 ls
 git push -f
 
-#Day-4: 
+#Day-4: Git Clean
 #--------------------------
 sshpass -p "Bl@kW" ssh -o StrictHostKeyChecking=no natasha@ststor01
-
+cd /usr/src/kodekloudrepos/media
+ls
+git config --global --add safe.directory /usr/src/kodekloudrepos/media
+git branch
+git log --oneline
+git status | head -n 20
+git config --list
+sudo git clean -f
+ls
+git log --stat
+git status
 
 #Day-5: 
 #------------------------------
