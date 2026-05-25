@@ -13,6 +13,7 @@ git log --stat
 sudo git switch master
 git branch
 git status
+
 #Actual command required in this task to merge a commit from feature branch to master branch
 sudo git cherry-pick 00139ee
 ls
@@ -86,6 +87,21 @@ ls
 git log --stat
 git status
 
-#Day-5: 
+#Day-5: Git Stash
 #------------------------------
 sshpass -p "Bl@kW" ssh -o StrictHostKeyChecking=no natasha@ststor01
+cd /usr/src/kodekloudrepos/ecommerce
+git branch
+git stash list
+git stash show -p stash@{1}
+git status
+git log --oneline
+ls
+cat info.txt 
+git stash apply stash@{1}
+git commit -m "Add welcome.txt file"
+git remote -v
+git push origin master
+git log --oneline
+git stash drop stash@{1}
+git stash list
