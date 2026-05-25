@@ -153,8 +153,9 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 Dropped refs/stash@{0} (56da7e24a10a5f1da3c82d4979fc8f104470c281)
 ###BLOCK-COMMENT
-
 #Fifth change will no longer be in the stash list
+
+
 git stash list
 <<'###BLOCK-COMMENT'
 stash@{0}: On feature-branch: Fourth change

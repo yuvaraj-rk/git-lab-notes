@@ -14,8 +14,14 @@ git diff --staged
 
 git diff master feature-branch
 
+#Remote Branches
+git diff origin/master origin/feature-branch
+
 #if current branch is feature-branch no need to mention explicitly)
 git diff master
+
+#Compare local branch with remote branch
+git diff origin/main
 
 ##### Comparing Specific Files #####
 git diff <file-name>

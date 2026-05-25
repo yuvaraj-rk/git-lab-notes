@@ -62,3 +62,15 @@ git reset --hard master@{"1 hour ago"}
 
 #Be careful with time-based resets, as they can be less precise than resetting to a specific commit. 
 #Always check the state of your repository after a time-based reset to make sure you've arrived where you intended.
+
+#Cleaning untracked files:
+#Before deleting anything, it is a best practice to perform a "dry run" using the -n flag. 
+#This will show you which files would be deleted without actually deleting them.
+git clean -n
+#Would remove <file.ext>
+
+#To remove all unstaged files from the current working directory including the directory
+git clean -f
+
+#To delete a file from the repository, then git commit to commit the removed file changes in repository
+git rm <file-name>
