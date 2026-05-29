@@ -79,6 +79,64 @@ git log --oneline --graph
 #--------------------------
 sshpass -p "Bl@kW" ssh -o StrictHostKeyChecking=no natasha@ststor01
 
+cd /usr/src/kodekloudrepos/cluster/
+ls
+git branch
+git status
+git switch master
+git branch
+git log --oneline --graph
+git merge feature
+git log --oneline --graph
+ls /opt/cluster.git/hooks/
+ls /opt/cluster.git/hooks/*push*
+cat /opt/cluster.git/hooks/post-update.sample
+date +%F
+git rev-parse HEAD
+git log --oneline --graph
+cat .git/HEAD 
+cd /opt/cluster.git/hooks/
+ls
+vi post-update
+cat post-update
+<<'###BLOCK-COMMENT'
+
+#!/bin/bash
+
+for refname in "$@"; do
+  if [ "$refname" = "refs/heads/master" ]; then
+    today=$(date +%F) 
+    tag_name="release-${today}" # relase-2025-11-21
+
+    newrev=$(git rev-parse "$refname")
+
+    git tag -f "$tag_name" "$newrev"
+  fi
+done
+
+#Standard post-update behavior so clients work correctly
+exec git update-server-info
+###BLOCK-COMMENT
+cd /usr/src/kodekloudrepos/cluster/
+git remote -v
+git push origin master
+cd /opt/cluster.git/hooks/
+ls post-update -la
+chmod +x post-update
+ls post-update -la
+git log --oneline
+git push origin master
+cd /usr/src/kodekloudrepos/cluster/
+git log --oneline
+ls
+cat feature.txt 
+echo "This is a new feature." > feature.txt 
+git add .
+git commit -m "Update feature"
+git push origin master
+cd /opt/cluster.git/hooks/
+git tag
+
 #Day-5: Git Setup from Scratch
 #------------------------------
 sshpass -p "Bl@kW" ssh -o StrictHostKeyChecking=no natasha@ststor01
