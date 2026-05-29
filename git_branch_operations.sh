@@ -40,6 +40,9 @@ git branch
 #View all branches including remote branches
 git branch -a
 
+#Print the name of the current Branch
+git branch --show-current
+
 #Amending Your Last Commit
 git commit --amend -m "Initial commit with corrected updates"
 
