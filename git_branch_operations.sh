@@ -49,6 +49,9 @@ git commit --amend -m "Initial commit with corrected updates"
 #View git commit logs as short summary
 git log --oneline
 
+#Set the default "push" branch to current checked out branch for remote repository
+git config push.default current
+
 #Cherry-picking Commits
 ######
 #It's most effective for applying specific, isolated changes or fixes from one branch to another when a full merge is not desired or appropriate

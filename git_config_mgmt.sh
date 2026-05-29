@@ -40,3 +40,13 @@ git config user.name
 
 #Prints global user name: John Doe
 git config --global user.name
+
+#To view & edit the config file in text editor
+#Local Config
+git config --edit
+
+#Print raw config file in the terminal
+cat ./.git/config
+
+#Global Config
+git config --global --edit

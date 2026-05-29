@@ -90,12 +90,18 @@ git log -S "console.log"
 #Check when a specific file was last modified:
 git log -1 --format="%H %an %ad %s" origin/master -- file2.txt
 
+#Display only the last commit message from a particular branch
+git --no-pager log -1 --format="%s" master 
+
 #Combine options. To see detailed changes to script.js in the last week:
 git log -p --since=1.week -- script.js
 
 #Checking Who Modified a Specific Line
 #This displays each line of the file along with the commit hash, author, and date of the last change to that line.
 git blame README.md
+
+#View Changes Between Commits 
+git shortlog b00b937..HEAD
 
 ##### Generating Statistics from Log #####
 
