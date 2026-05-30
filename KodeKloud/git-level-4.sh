@@ -140,3 +140,49 @@ git tag
 #Day-5: Git Setup from Scratch
 #------------------------------
 sshpass -p "Bl@kW" ssh -o StrictHostKeyChecking=no natasha@ststor01
+
+yum update
+yum install git -y
+git -v
+git config --global user.name "kkloud"
+git config --global user.name
+git config --global user.email "kkloud@kodekloud.com"
+git config --global user.email
+git init --bare /opt/beta.git
+cd /opt/beta.git
+cat /tmp/update 
+cp /tmp/update ./hooks/
+ls ./hooks/
+git clone /opt/beta.git/ /usr/src/kodekloudrepos/
+cd /usr/src/kodekloudrepos/beta/
+ls
+git branch
+git config -l
+git switch -c xfusioncorp_beta
+cp /tmp/readme.md .
+ls
+git add .
+git commit -m "Initial commit"
+git branch
+git log --oneline --graph
+git remote -v
+git push -u origin xfusioncorp_beta
+git log --oneline --graph
+git switch -c master
+git push -u origin master
+#push to master branch rejected due to hook configuration
+ls
+git status
+git branch --unset-upstream
+git push -u origin master
+git log --oneline --graph
+git remote -v
+cat /tmp/update
+<<'###BLOCK-COMMENT'
+#!/bin/sh
+if [ "$1" == refs/heads/master ];
+then
+  echo "Manual pushes to the master branch is restricted!!"
+  exit 1
+fi
+###BLOCK-COMMENT
