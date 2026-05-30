@@ -31,6 +31,12 @@ git branch --merged
 #Only works if all changes in feature-dimension merged to master
 git branch -d feature-dimension
 
+#Disable Fast Forward merge on single commit
+git merge --no-ff <branch-name>
+
+#Disable globally for all branches
+git config --global merge.ff false
+
 #Force delete irrespective of the status of changes merge
 git branch -D feature-dimension
 
