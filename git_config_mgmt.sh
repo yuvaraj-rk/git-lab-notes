@@ -50,3 +50,9 @@ cat ./.git/config
 
 #Global Config
 git config --global --edit
+
+#Enable Auto Correct Option (number represents 1/10 of a second wait by git & then proceed to execute the assumed command)
+git config --global help.autocorrect 1
+
+#To set the preferred git text editor to vim
+git config --global core.editor "vim"
